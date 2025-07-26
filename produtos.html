@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerencie seus produtos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Cadastro e gerenciamento de produtos</h1>
+    <form id="form-produto" class= "form-produto">
+        <label>Foto do produto</label>
+        <input type="file" id="foto" name="foto">
+        <label>Nome</label>
+        <input type="text" id="nomeProduto" required>
+        <label>Descrição</label>
+        <textarea id="descricao" required></textarea>
+        <label>Preço</label>
+        <input type="number" id="preco" step="0.01" required>
+        <label>Prazo de entrega</label>
+        <input type="text" id="prazo" required>
+        <label>Disponível para venda</label>
+        <input type="checkbox" id="disponivel" checked>
+        <button type="submit">Adicionar produto</button>
+    </form>
+
+    <div id="lista-produtos"></div>
+    <script>
+        var produtos = [];
+        document.getElementById("form-produto").addEventListener("submit", function (event) {
+            event.preventDefault();
+            var fotoInput = document.getElementById("foto");
+            var file = fotoInput.files[0];
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function () {
+                    adicionarProduto(reader.result);
+                };
+                reader.readAsDataURL(file);
+            } else {
+                adicionarProduto("");
+            }
+        });
+
+        function adicionarProduto(imagemBase64) {
+            var produto = {
+                id: Date.now(),
+                foto: imagemBase64,
+                nome: document.getElementById("nomeProduto").value,
+                descricao: document.getElementById("descricao").value,
+                preco: document.getElementById("preco").value,
+                prazo: document.getElementById("prazo").value,
+                disponivel: document.getElementById("disponivel").checked
+            };
+            produtos.push(produto);
+            atualizarListaProdutos();
+            document.getElementById("form-produto").reset();
+        }
+
+        function atualizarListaProdutos() {
+            var lista = document.getElementById("lista-produtos");
+            lista.innerHTML = "<h3>Produtos Cadastrados</h3>";
+            produtos.forEach(function (prod) {
+                var div = document.createElement("div");
+                div.className = "produto";
+                div.innerHTML = `
+                    <img src="${prod.foto}" alt="Foto" width="100"><br>
+                    <strong>${prod.nome}</strong><br>
+                    ${prod.descricao}<br>
+                    Preço: R$ ${prod.preco} | Prazo: ${prod.prazo}<br>
+                    Disponível: <input type="checkbox" onchange="toggleDisponibilidade(${prod.id})" ${prod.disponivel ? "checked" : ""}><br>
+                    <button onclick="editarProduto(${prod.id})">Editar</button>
+                    <button onclick="excluirProduto(${prod.id})">Excluir</button>
+                `;
+                lista.appendChild(div);
+            });
+        }
+
+        function excluirProduto(id) {
+            var index = produtos.findIndex(function (p) { return p.id === id; });
+            if (index > -1) {
+                produtos.splice(index, 1);
+                atualizarListaProdutos();
+            }
+        }
+        function editarProduto(id) {
+            var prod = produtos.find(function (p) { return p.id === id; });
+            document.getElementById("nomeProduto").value = prod.nome;
+            document.getElementById("descricao").value = prod.descricao;
+            document.getElementById("preco").value = prod.preco;
+            document.getElementById("prazo").value = prod.prazo;
+            document.getElementById("disponivel").checked = prod.disponivel;
+            excluirProduto(id); // remove o antigo para re-adicionar
+        }
+
+        function toggleDisponibilidade(id) {
+            var prod = produtos.find(function (p) { return p.id === id; });
+            if (prod) {
+                prod.disponivel = !prod.disponivel;
+                atualizarListaProdutos();
+            }
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compras e vendas</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1> Seja bem vindo! </h1>
+    <div class="main-cadastro">
+        <div class="left-cadastro">
+            <h1>Compre ou venda aqui.      <br>  Oque você precisar!</h1>
+            <img src="imag.svg" alt="anima" width="400" class="imagem-embaixo">
+        </div>
+        <div class="right-cadastro">
+        <div class="card-cadastro">
+        
+            <div class="textfield">
+                <label for="vendedor"> Clique aqui para ser um vendedor.</label>
+                 <button onclick="mostrarTela('vendedor')"><a href="vendedor.html">Cadastre-se</a></button>
+                
+            </div>
+            <div class="textfield">
+                <label for="comprador"> Clique aqui para ser um consumidor.</label>
+                 <button onclick="mostrarTela('consumidor')"><a href="consumidor.html">Cadastre-se</a></button> 
+                
+            </div>
+            <div class="textfield">
+                <label for="vendedor"> Clique  para gerenciar seus produtos.</label>
+                 <button onclick="mostrarTela('gerenciamento')"><a href="produtos.html">Gerenciamento</a></button>
+                
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="./script.js">
+
+    </script>
+</body>
+</html>
