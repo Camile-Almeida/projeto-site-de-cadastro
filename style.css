@@ -1,16 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 body {
-    font-family: 'Noto Sans', sans-serif;
-    background-color: rgb(255, 255, 255);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: var(--cor0)
     }
 
 :root{
-        --cor0:#edf5f7;
+        --cor0:#cbe8f0;
         --cor1:#4CD9C1;
         --cor2:#6ACDBC;
         --cor3:#6FA29A;
         --cor4:#406266;
         --cor5:#3D4D4B;
+
+        --fonte-destaque: 'Bebas Neue', cursive;
     }
 
 *{
@@ -27,7 +30,12 @@ header{
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.753);
 }
 
+header>h1{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 45px;
+}
 header> p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: rgb(166, 216, 209);
     margin: auto;   
     font-weight: bold;
@@ -37,7 +45,7 @@ header> p{
 
 .main-cadastro{
     max-width: 1000px;
-    min-width: 350px;
+    min-width: 300px;
     min-height: 600px;
     margin: auto;
     background:var(--cor5);
@@ -58,8 +66,9 @@ header> p{
 }
 
 .left-cadastro>img{
-    max-width: 100%;
+    max-width: 350px;;
     margin: auto;
+    width: 100%;
 }
 
 .right-cadastro{
@@ -131,19 +140,19 @@ h1 {
 form {
     background: var(--cor5);
     padding: 30px;
-    border: 1px solid #e6dddd;
     border-radius: 5px;
     max-width: 800px;
     min-width: 350px;
     margin: auto;
-    
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.753);
+
 }
 .form-content{
     padding-bottom:18px;
     margin-bottom: 8px;
 }
 .form-content>label{
-    display: inline-block;
+    display:flex;
     color: white;
     
 }
@@ -156,6 +165,7 @@ h3{
     border-radius: 8px;
     padding: 8px;
     border: 2px solid #406266;
+    
 }
 .form-content > p {
     position: absolute;
@@ -209,8 +219,9 @@ border-color: red;
 }
 
 label {
-    display:block;
+    display:flex;
     margin-right: 10px;
+    margin: auto;
     
 }
 input, textarea, select {
@@ -240,9 +251,6 @@ button>a:hover {
     background-color: rgb(158, 140, 150);
 }
 .imagem-direita{
-    float: right;
-}
-.imagem-esquerda{
-    float:left;
-
+    display: block;
+    margin: auto;
 }

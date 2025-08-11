@@ -10,16 +10,17 @@
     <header>
         <h1> Cadastro de Vendedor</h1>
     </header>
-     <img src="imag.svg" alt="anima" width="400" class="imagem-direita">
-        <img src="imag.svg" alt="anima" width="400" class="imagem-esquerda">
     <form id="form" class="form">
+        <img src="imag.svg" alt="anima" width="400" class="imagem-direita">
+    
         <div class="form-content">
-            <label for="username">Nome:</label>
+            <label for="username" >Nome:</label>
              <input 
              type="text" 
              id="username"
              placeholder="Digite o nome do usuário"
-             name="nome" >
+             name="nome" 
+             required>
              <p>Aqui vai a mensagem de erro</p>
         </div>
 
@@ -30,7 +31,7 @@
              id="CPF"
              placeholder="Digite o CPF..."
              name="CPF" 
-             >
+             required>
              <p>Aqui vai a mensagem de erro</p>
         </div>
         <div class="form-content">
@@ -39,7 +40,7 @@
              type="text" 
              id="endereco"
              placeholder="Digite o endereço..."
-              >
+             required>
              <p>Aqui vai a mensagem de erro</p>
         </div>
 
@@ -49,7 +50,8 @@
              type="tel" 
              id="telefone"
              placeholder="Digite o telefone..."
-             name="telefone" >
+             name="telefone" 
+             required>
              <p>Aqui vai a mensagem de erro</p>
         </div>
         
@@ -59,7 +61,8 @@
              type="email" 
              id="email"
              placeholder="Digite o email..."
-             name="email" >
+             name="email" 
+             required>
              <p>Aqui vai a mensagem de erro</p>
         </div>
 
@@ -69,7 +72,8 @@
              type="password" 
              id="password"
              placeholder="Digite a senha"
-             name="password" >
+             name="password" 
+             required>
              <p>Aqui vai a mensagem de erro</p>
         </div>
 
@@ -79,7 +83,8 @@
              type="password" 
              id="password-confirmation"
              placeholder="Digite a sua senha novamente..."
-             name="agencia" >
+             name="agencia"
+             required >
              <p>Aqui vai a mensagem de erro</p>
         </div>
 
@@ -91,7 +96,8 @@
              type="text" 
              id="banco"
              placeholder="Digite o nome do banco..."
-             name="banco" >
+             name="banco" 
+             required>
              <p>Aqui vai a mensagem de erro</p>
         </div>
 
@@ -101,7 +107,8 @@
              type="number" 
              id="agencia"
              placeholder="Digite a agência..."
-             name="agencia" >
+             name="agencia"
+             required >
              <p>Aqui vai a mensagem de erro</p>
         </div>
 
@@ -112,7 +119,8 @@
              type="number" 
              id="conta"
              placeholder="Digite a conta..."
-             name="conta" >
+             name="conta" 
+             required>
              <p>Aqui vai a mensagem de erro</p>
         </div>
 

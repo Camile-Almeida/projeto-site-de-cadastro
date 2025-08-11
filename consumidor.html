@@ -9,11 +9,9 @@
 <body>
     <header>
         <h1> Cadastro de Consumidor</h1>
-    </header>
-      <img src="imag.svg" alt="anima" width="400" class="imagem-direita">
-        <img src="imag.svg" alt="anima" width="400" class="imagem-esquerda">
-     
+    </header>     
     <form id="form" class="form">
+         <img src="imag.svg" alt="anima" width="400" class="imagem-direita">
         <div class="form-content">
             <label for="username">Nome:</label>
              <input 
@@ -30,7 +28,8 @@
              type="text" 
              id="CPF"
              placeholder="Digite o CPF..."
-             name="CPF" >
+             name="CPF" 
+             required>
              <p>Aqui vai a mensagem de erro</p>
         </div>
         <div class="form-content">
@@ -39,7 +38,8 @@
              type="text" 
              id="endereco"
              placeholder="Digite o endereço..."
-             name="endereço" >
+             name="endereço" 
+             required>
              <p>Aqui vai a mensagem de erro</p>
         </div>
 
@@ -49,7 +49,8 @@
              type="tel" 
              id="telefone"
              placeholder="Digite o telefone..."
-             name="telefone" >
+             name="telefone"
+             required >
              <p>Aqui vai a mensagem de erro</p>
         </div>
         
@@ -59,7 +60,8 @@
              type="email" 
              id="email"
              placeholder="Digite o email..."
-             name="email" >
+             name="email" 
+             required>
              <p>Aqui vai a mensagem de erro</p>
         </div>
 
@@ -69,7 +71,8 @@
              type="password" 
              id="password"
              placeholder="Digite a senha"
-             name="password" >
+             name="password"
+             required >
              <p>Aqui vai a mensagem de erro</p>
         </div>
 
@@ -79,7 +82,8 @@
              type="password" 
              id="password-confirmation"
              placeholder="Digite a sua senha novamente..."
-             name="password-confirmation" >
+             name="password-confirmation" 
+             required>
              <p>Aqui vai a mensagem de erro</p>
         </div>
 
