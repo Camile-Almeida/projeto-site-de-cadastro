@@ -1,65 +1,93 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 body {
     font-family: 'Noto Sans', sans-serif;
-    margin: 30px 50px;
-    background-color: rgb(41, 138, 113);
+    background-color: rgb(255, 255, 255);
     }
 
+:root{
+        --cor0:#edf5f7;
+        --cor1:#4CD9C1;
+        --cor2:#6ACDBC;
+        --cor3:#6FA29A;
+        --cor4:#406266;
+        --cor5:#3D4D4B;
+    }
+
+*{
+    margin: 0px;
+    padding: 0px; 
+}
+
+header{
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));
+    min-height: 100px;
+    text-align: center;
+    padding-top: 30px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.637);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.753);
+}
+
+header> p{
+    color: rgb(166, 216, 209);
+    margin: auto;   
+    font-weight: bold;
+    font-size: x-large;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.637);
+ }
 
 .main-cadastro{
-    width: 100vw;
-    height: 50vw;
-    background: rgb(28, 68, 48);
+    max-width: 1000px;
+    min-width: 350px;
+    min-height: 600px;
+    margin: auto;
+    background:var(--cor5);
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-inline-start: 10px 10px;
-    max-width: 1100px;
-    color: #ccc;
+    color: var(--cor2);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.753);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
-.main-cadastro button{
-    color: #ccc;
+
+
+.textfield>button>a{
+    color: var(--cor5);
+    text-decoration: none;
+    font-size: large;
 }
-.left-cadastro {
-    width: 50vw;
-    height: 45vw;
-    display:table-cell;
-    justify-content: center;
-    align-items: center;
+
+.left-cadastro>img{
+    max-width: 100%;
+    margin: auto;
 }
-.left-cadastro > h1{
-    color: rgb(166, 216, 209);
-    text-align: right;    }
+
 .right-cadastro{
-    width: 50vw;
-    height: 50vw;
-    display: flex;
     justify-content: center;
     align-items: center;
-    color: #406266;
+    color: var(--cor4);
+    font-weight: bold;
+    font-size: large;
 }
 .right-cadastro > button {
-    color: #406266;
-    background-color: #406266;
+    color: var(--cor1);
+    background-color: var(--cor1);
 }
 .card-cadastro{
-    width: 60%;
     display: flex;
     justify-content: left;
     align-items: left;
     flex-direction: column;
     padding: 30px 35px;
-    background: rgb(71, 179, 152);
+    background: var(--cor2);
     border-radius: 20px;
-    box-shadow: 0px 10px 40px rgb(54, 124, 97);
-    
+    box-shadow: 0px 7px 7px rgba(46, 46, 46, 0.637);    
 }
 
 .textfield{
-    display: flex;
+
     flex-direction: column;
     align-items:flex;
-    justify-content:flex-start;
     width: 100%;
     text-align: justify;
 }
@@ -74,12 +102,10 @@ border-radius: 10px;
 padding: 15px;
 background: rgb(230, 221, 221);
 }
-.textfield > label{
-color: rgb(255, 249, 249);
-   margin-bottom: 1px;
-   
-    
-   font-size: 13pt;
+.textfield > a {
+    color: rgb(255, 249, 249);
+    margin-bottom: 1px;
+    font-size: 13pt;
    
 }
 .textfield > button {
@@ -103,24 +129,29 @@ h1 {
     
 }
 form {
-    background: #90ccba;
+    background: var(--cor5);
     padding: 30px;
     border: 1px solid #e6dddd;
     border-radius: 5px;
-    max-width: 500px;
+    max-width: 800px;
+    min-width: 350px;
+    margin: auto;
     
 }
 .form-content{
     padding-bottom:18px;
     margin-bottom: 8px;
-    position: relative;
 }
 .form-content>label{
     display: inline-block;
-    margin-bottom: 4px;
+    color: white;
+    
 }
-.form-content input{
-    display: block;
+h3{
+    color: white;
+    font-size: x-large;
+}
+.form-content>input{
     width: 100%;
     border-radius: 8px;
     padding: 8px;
@@ -133,8 +164,8 @@ form {
     visibility: hidden;
 }
 .form button{
-    background-color: #406266;
-    color: #ccc;
+    background-color: var(--cor3);
+    color: #0c0b0b;
     width: 100%;
     border-radius: 14px;
     padding: 10px;
@@ -144,9 +175,16 @@ form {
 }
 
 .form-produto{
-    padding-bottom:18px;
-    margin-bottom: 8px;
-    position: relative;
+    max-width: 1000px;
+    min-width: 350px;
+    margin: auto;
+    background:var(--cor5);
+    justify-content: center;
+    align-items: center;
+    color: var(--cor2);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.753);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .form-produto > input{
@@ -188,11 +226,12 @@ button {
     border: none;
     cursor: pointer;
 }
-
-
 button:hover {
-    background-color: aquamarine;
-    color: #9cc4c0;
+    background-color: var(--cor4);
+    color: #4CD9C1;
+}
+button>a:hover {
+    color: #4CD9C1;
 }
 .product {
     border: 1px solid #ccc;
@@ -203,7 +242,7 @@ button:hover {
 .imagem-direita{
     float: right;
 }
-.imagem-embaixo{
-    float:inline-end;
+.imagem-esquerda{
+    float:left;
 
 }
